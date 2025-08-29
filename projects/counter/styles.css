@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.counter_div {
+  display: flex;
+  flex-direction: row;
+}
+
+.minus,
+.plus,
+.number_div {
+  font-size: 50px;
+}
+
+.number_div {
+  padding-left: 30px;
+  padding-right: 30px;
+  border: 1px solid black;
+}
+
+.minus,
+.plus {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.positive {
+  color: green;
+}
+
+.negative {
+  color: red;
+}
