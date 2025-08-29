@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+}
+
 .main {
   background: linear-gradient(90deg, #8c11fa, #009ca0);
   padding-top: 50px;
@@ -129,10 +133,40 @@ p {
   border-top-left-radius: 5px;
   padding-bottom: 20px;
   padding-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .project_name {
   color: white;
   text-align: center;
   font-family: Helvetica, sans-serif;
+}
+
+.project {
+  transition: all 0.3s ease;
+}
+
+.project:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.project_name {
+  position: relative;
+  display: inline-block;
+}
+
+.project_name::after {
+  content: " »";
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  position: absolute;
+  right: -20px;
+}
+
+.project:hover .project_name::after {
+  opacity: 1;
 }
