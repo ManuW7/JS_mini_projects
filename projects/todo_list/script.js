@@ -38,8 +38,7 @@ function setup_handler(form) {
     label.setAttribute("for", uniqueId);
     checkbox.setAttribute("id", uniqueId);
 
-    form.remove();
-    notes_div.appendChild(new_done_note);
+    form.replaceWith(new_done_note);
   });
 }
 notes_div.addEventListener("click", function (event) {
@@ -54,7 +53,7 @@ notes_div.addEventListener("click", function (event) {
     const note = event.target.closest(".note");
     if (note) {
       const new_note = edit_template.content.cloneNode(true);
-      notes_div.append(new_note);
+      note.before(new_note);
 
       const form = notes_div.querySelector("form:last-of-type");
       form.querySelector(".note_name").value =
@@ -68,3 +67,23 @@ notes_div.addEventListener("click", function (event) {
     }
   }
 });
+
+notes_div.addEventListener("change", function (event) {
+  if (
+    event.target.type === "checkbox" &&
+    event.target.classList.contains("done_checkbox")
+  ) {
+    const note = event.target.closest(".note");
+    if (note) {
+      toggleNoteCompletion(note, event.target.checked);
+    }
+  }
+});
+
+function toggleNoteCompletion(noteElement, isCompleted) {
+  if (isCompleted) {
+    noteElement.classList.add("task_done");
+  } else {
+    noteElement.classList.remove("task_done");
+  }
+}

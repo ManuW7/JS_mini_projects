@@ -97,4 +97,5 @@ p {
 
 .task_done {
   background-color: gray;
+  opacity: 0.6;
 }
