@@ -87,6 +87,10 @@ p {
   margin: 0 5px;
 }
 
+.note_name {
+  max-width: 100px;
+}
+
 .note_description {
   max-width: 500px;
 }
