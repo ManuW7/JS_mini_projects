@@ -39,6 +39,7 @@ function setup_handler(form) {
     checkbox.setAttribute("id", uniqueId);
 
     form.replaceWith(new_done_note);
+    saveToLocalStorage();
   });
 }
 notes_div.addEventListener("click", function (event) {
@@ -46,6 +47,7 @@ notes_div.addEventListener("click", function (event) {
     const note = event.target.closest(".note");
     if (note) {
       note.remove();
+      saveToLocalStorage();
     }
   }
 
@@ -64,6 +66,7 @@ notes_div.addEventListener("click", function (event) {
         note.querySelector(".note_deadline").textContent;
       setup_handler(form);
       note.remove();
+      saveToLocalStorage();
     }
   }
 });
@@ -76,6 +79,7 @@ notes_div.addEventListener("change", function (event) {
     const note = event.target.closest(".note");
     if (note) {
       toggleNoteCompletion(note, event.target.checked);
+      saveToLocalStorage();
     }
   }
 });
@@ -87,3 +91,47 @@ function toggleNoteCompletion(noteElement, isCompleted) {
     noteElement.classList.remove("task_done");
   }
 }
+
+function saveToLocalStorage() {
+  const notes = [];
+  document.querySelectorAll(".note.done").forEach(function (item) {
+    notes.push({
+      name: item.querySelector(".note_name").textContent,
+      text: item.querySelector(".note_description").textContent,
+      date: item.querySelector(".note_deadline").textContent,
+      completed: item.classList.contains("task_done"),
+    });
+  });
+  localStorage.setItem("saved_notes", JSON.stringify(notes));
+}
+
+function loadFromLocalStorage() {
+  const saved_notes = JSON.parse(localStorage.getItem("saved_notes")) || [];
+
+  saved_notes.forEach(function (item) {
+    const new_done_note = done_note_template.content.cloneNode(true);
+
+    new_done_note.querySelector(".note_name").textContent = item.name;
+    new_done_note.querySelector(".note_description").textContent = item.text;
+    new_done_note.querySelector(".note_deadline").textContent = item.date;
+
+    const checkbox = new_done_note.querySelector(".done_checkbox");
+    const label = new_done_note.querySelector(".done_label");
+    const uniqueId = create_unique_id("done");
+
+    label.setAttribute("for", uniqueId);
+    checkbox.setAttribute("id", uniqueId);
+
+    if (item.completed) {
+      checkbox.checked = true;
+      const noteElement = new_done_note.querySelector(".note");
+      noteElement.classList.add("task_done");
+    }
+
+    notes_div.appendChild(new_done_note);
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  loadFromLocalStorage();
+});
