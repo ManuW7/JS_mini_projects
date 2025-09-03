@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TODO list</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="todo_list_assets/playground.png" />
+  </head>
+  <body>
+    <div class="header_div">
+      <div class="title_div"><h1 class="title">TODO List</h1></div>
+      <div class="button_div"><button>Create new note</button></div>
+    </div>
+    <div class="notes_container_div"></div>
+
+    <template id="edit_note_template">
+      <form class="note form">
+        <div class="note_name_div">
+          <label for="note_name">Название заметки</label>
+          <input type="text" class="note_name" id="note_name" />
+        </div>
+        <div class="note_description_div">
+          <label for="note_text_1">Описание заметки</label>
+          <textarea name="note_text_input" id="note_text_1"></textarea>
+        </div>
+        <div class="time_management_div">
+          <label for="deadline_1">Дедлайн</label>
+          <input type="date" id="deadline_1" />
+        </div>
+        <div class="button_div">
+          <button class="submit" type="submit">Сохранить</button>
+        </div>
+      </form>
+    </template>
+
+    <template id="done_note_template">
+      <div class="note done">
+        <p class="note_name">Здесь будет название заметки</p>
+        <p class="note_description">
+          Здесь будет большое и хорошее описание созданной заметки
+        </p>
+        <p class="note_deadline">Здесь будет дедлайн</p>
+        <div class="done_div">
+          <label for="done">Выполнено</label>
+          <input type="checkbox" id="done" />
+        </div>
+        <button class="edit">Редактировать</button>
+        <button>Удалить</button>
+      </div>
+    </template>
+  </body>
+</html>

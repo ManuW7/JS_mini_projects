@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --brown: #90460e;
+  --dark-beige: #ac9362;
+}
+
+.header_div {
+  background-color: var(--dark-beige);
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 50px 30px 50px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Helvetica, sans-serif;
+}
+
+.title {
+  color: beige;
+}
+
+button {
+  background-color: beige;
+  border: none;
+  font-size: 1.5em;
+  border-radius: 5px;
+  padding: 5px;
+  color: var(--brown);
+  cursor: pointer; /* Добавьте это всегда для кнопок! */
+  transition: all 0.2s ease; /* Плавные переходы для hover */
+}
+
+button:hover {
+  background-color: var(--brown);
+  color: beige;
+}
+
+button:active {
+  border: 1px solid beige;
+  margin-bottom: -2px;
+}
+
+textarea {
+  width: 300px;
+  height: 100px;
+}
+
+.note {
+  background-color: beige;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid black;
+  justify-content: space-around;
+}
+
+.note_name_div,
+.note_description_div,
+.time_management_div,
+.done_div {
+  display: flex;
+  flex-direction: column;
+}
+
+label,
+p {
+  color: var(--brown);
+  font-family: Helvetica, sans-serif;
+}
+
+.note button {
+  font-size: 1em; /* Уменьшаем размер именно у кнопок внутри .note */
+  margin: 0 5px; /* Добавляем отступ между кнопками */
+}
+
+.note_description {
+  max-width: 500px;
+}
