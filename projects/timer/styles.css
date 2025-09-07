@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.timer_body {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.buttons_div {
+  display: flex;
+  margin-top: 50px;
+}
+
+button {
+  font-size: 2em;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 10px;
+}
+
+.timer_display {
+  background-color: white;
+  padding: 25px;
+  font-size: 2em;
+  border-radius: 5px;
+}
