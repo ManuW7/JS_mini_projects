@@ -14,6 +14,7 @@
 |  2  |         Светофор          | Переключается свет по нажатию кнопки или через промежуток времени |   [Ссылка](https://manuw7.github.io/JS_mini_projects/projects/trafic_light/index.html)   |
 |  3  | Генератор случайных чисел |      Генерация случайного целого числа между двумя задаными       | [Ссылка](https://manuw7.github.io/JS_mini_projects/projects/random_generator/index.html) |
 |  4  |         TODO List         | Список задач с возможностями добавления, редактирования, удаления |    [Ссылка](https://manuw7.github.io/JS_mini_projects/projects/todo_list/index.html)     |
+|  5  |           Timer           |         Таймер для засекания времени и обратного отсчета          |      [Ссылка](https://manuw7.github.io/JS_mini_projects/projects/timer/index.html)       |
 |     | _... больше в процессе!_  |                                                                   |                                                                                          |
 
 ---
