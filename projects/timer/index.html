@@ -8,13 +8,37 @@
     <title>Timer</title>
   </head>
   <body>
-    <div class="timer_body">
-      <div class="timer_display"><p>00:00:00</p></div>
+    <audio
+      id="myAudio"
+      src="timer_assets/electronic-alarm-signal.mp3"
+      class="audio"
+    ></audio>
+    <div class="just_timer">
+      <div class="timer_body">
+        <div class="timer_display"><p>00:00:00</p></div>
+      </div>
+      <div class="regular_timer_buttons_div">
+        <button class="start_button">Start</button>
+        <button class="stop_button">Stop</button>
+        <button class="reset_button">Reset</button>
+      </div>
     </div>
-    <div class="buttons_div">
-      <button class="start_button">Start</button>
-      <button class="stop_button">Stop</button>
-      <button class="reset_button">Reset</button>
+
+    <div class="countdown_timer">
+      <p class="annotation_1">Таймер обратного отсчета</p>
+      <p class="annotation_2">
+        Введите время в формате hh:mm:ss и нажмите старт
+      </p>
+      <div class="timer_body">
+        <div class="countdown_timer_display">
+          <input type="text" id="time_input" class="time_input" />
+        </div>
+      </div>
+      <div class="countdown_timer_buttons_div">
+        <button class="start_button">Start</button>
+        <button class="stop_button">Stop</button>
+        <button class="reset_button">Reset</button>
+      </div>
     </div>
 
     <script src="script.js"></script>

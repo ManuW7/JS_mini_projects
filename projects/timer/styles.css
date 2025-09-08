@@ -18,11 +18,12 @@ body {
   height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  justify-content: space-around;
+  flex-direction: row;
 }
 
-.buttons_div {
+.countdown_timer_buttons_div,
+.regular_timer_buttons_div {
   display: flex;
   margin-top: 50px;
 }
@@ -34,9 +35,32 @@ button {
   padding: 10px;
 }
 
-.timer_display {
+.timer_display,
+.countdown_timer_display {
   background-color: white;
   padding: 25px;
   font-size: 2em;
   border-radius: 5px;
+}
+
+.just_timer,
+.countdown_timer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.invisible {
+  opacity: 0;
+}
+
+.annotation_1 {
+  position: absolute;
+  top: 80px;
+}
+
+.annotation_2 {
+  position: absolute;
+  top: 100px;
 }
