@@ -53,6 +53,30 @@ h1 {
   margin-right: 20px;
   margin-left: 20px;
   border: 3px solid transparent;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.theme:not(.pressed):hover {
+  background-color: white;
+  border: 3px solid #8c11fa;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(140, 17, 250, 0.25);
+}
+
+.theme.pressed {
+  background-color: #8c11fa;
+  color: white;
+  border-color: #8c11fa;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(140, 17, 250, 0.4);
+}
+
+.theme.pressed:hover {
+  background-color: #8c11fa;
+  color: white;
+  border-color: #8c11fa;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(140, 17, 250, 0.5);
 }
 
 .theme_icon {
@@ -62,6 +86,14 @@ h1 {
 
 .theme_title {
   font-weight: 600;
+}
+
+.theme:first-of-type {
+  margin-left: 0;
+}
+
+.theme:last-of-type {
+  margin-right: 0;
 }
 
 .timer_div {
@@ -101,7 +133,6 @@ h1 {
 }
 
 .start_quiz_btn:hover,
-.theme:hover,
 .to_the_main_button:hover {
   background-image: none;
   background-color: white;
@@ -117,8 +148,9 @@ h1 {
 }
 
 .timer_container {
-  width: calc(100% - 40px);
   margin-bottom: 20px;
+  display: flex;
+  justify-content: flex-start;
 }
 
 .checkbox {
@@ -243,4 +275,8 @@ h1 {
   font-size: 1.5em;
   font-weight: 500;
   margin-bottom: -20px;
+}
+
+.pressed {
+  background-color: #8c11fa;
 }
