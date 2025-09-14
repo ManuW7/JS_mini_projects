@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="quiz_assets/playground.png" />
+  </head>
+  <body>
+    <div id="app">
+      <main>
+        <h1>Brain Quiz</h1>
+        <p class="annotation">Test your knowlege!</p>
+        <div class="themes_container">
+          <button class="theme">
+            <div class="theme_icon">🌍</div>
+            <h3 class="theme_title">Все категории</h3>
+          </button>
+          <button class="theme">
+            <div class="theme_icon">💻</div>
+            <h3 class="theme_title">IT и технологии</h3>
+          </button>
+          <button class="theme">
+            <div class="theme_icon">🔬</div>
+            <h3 class="theme_title">Наука</h3>
+          </button>
+          <button class="theme">
+            <div class="theme_icon">📜</div>
+            <h3 class="theme_title">История</h3>
+          </button>
+        </div>
+        <div class="timer_container">
+          <input type="checkbox" class="checkbox" id="checkbox" />
+          <label class="timer_label" for="checkbox">
+            <span class="timer_text">Timer</span>
+            <span class="custom_slider"></span>
+          </label>
+        </div>
+        <div class="button_div">
+          <button class="start_quiz_btn">Start the quiz</button>
+        </div>
+      </main>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

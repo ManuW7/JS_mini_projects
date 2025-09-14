@@ -1,0 +1,167 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  height: 100vh;
+  background-image: linear-gradient(90deg, #0a00cc, #000594);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  background-color: rgb(232, 232, 232);
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+}
+
+h1 {
+  font-size: 3.5em;
+}
+
+.annotation {
+  margin-top: 10px;
+  font-size: 1.5em;
+  font-weight: 300;
+  margin-bottom: 50px;
+}
+
+.themes_container {
+  display: flex;
+  margin-bottom: 50px;
+}
+
+.theme {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  border-radius: 20px;
+  padding: 20px;
+  width: 150px;
+  height: 150px;
+  text-align: center;
+  margin-right: 20px;
+  margin-left: 20px;
+  border: 3px solid transparent;
+}
+
+.theme_icon {
+  font-size: 3em;
+  margin-bottom: 5px;
+}
+
+.theme_title {
+  font-weight: 600;
+}
+
+.timer_div {
+  width: calc(100% - 40px);
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.timer_sign {
+  padding: 20px;
+  font-size: 1.5em;
+}
+
+.checkbox {
+  margin-top: 5px;
+}
+
+.button_div {
+  width: calc(100% - 40px);
+  display: flex;
+}
+
+.start_quiz_btn {
+  margin-top: 50px;
+  width: 100%;
+  font-size: 30px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  border-radius: 20px;
+  background-image: linear-gradient(90deg, #8c11fa, #009ca0);
+  color: white;
+  padding: 15px;
+  border: 3px solid transparent;
+}
+
+.start_quiz_btn:hover,
+.theme:hover {
+  background-image: none;
+  background-color: white;
+  color: black;
+  border: 3px solid #8c11fa;
+}
+
+.start_quiz_btn:active,
+.theme:active {
+  background-color: #8c11fa;
+  color: white;
+}
+
+.timer_container {
+  width: calc(100% - 40px);
+  margin-bottom: 20px;
+}
+
+.checkbox {
+  display: none;
+}
+
+.timer_label {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 20px;
+  background-color: white;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 1.5em;
+}
+
+.timer_text {
+  font-weight: 500;
+}
+
+.custom_slider {
+  position: relative;
+  width: 60px;
+  height: 30px;
+  background-color: #ccc;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.custom_slider::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  width: 26px;
+  height: 26px;
+  background-color: white;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.checkbox:checked + .timer_label .custom_slider {
+  background-color: #8c11fa;
+}
+
+.checkbox:checked + .timer_label .custom_slider::before {
+  left: 32px;
+}
