@@ -21,6 +21,7 @@ main {
   align-items: center;
   padding: 50px;
   max-width: 900px;
+  min-width: 60vw;
 }
 
 h1 {
@@ -86,7 +87,8 @@ h1 {
   display: flex;
 }
 
-.start_quiz_btn {
+.start_quiz_btn,
+.to_the_main_button {
   margin-top: 50px;
   width: 100%;
   font-size: 30px;
@@ -99,7 +101,8 @@ h1 {
 }
 
 .start_quiz_btn:hover,
-.theme:hover {
+.theme:hover,
+.to_the_main_button:hover {
   background-image: none;
   background-color: white;
   color: black;
@@ -107,7 +110,8 @@ h1 {
 }
 
 .start_quiz_btn:active,
-.theme:active {
+.theme:active,
+.to_the_main_button:active {
   background-color: #8c11fa;
   color: white;
 }
@@ -223,5 +227,20 @@ h1 {
   background-color: #8c11fa;
   border: 1px solidt transparent;
   margin-top: 30px;
+  margin-bottom: -20px;
+}
+
+.final_page_header {
+  margin-bottom: 50px;
+}
+.stat {
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.thanks {
+  margin-top: 100px;
+  font-size: 1.5em;
+  font-weight: 500;
   margin-bottom: -20px;
 }

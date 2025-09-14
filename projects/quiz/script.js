@@ -45,4 +45,19 @@ const question_page_html = `<main>
         <div class="timer_line"></div>
       </main>`;
 
-document.querySelector(".app").innerHTML = starting_page_html;
+const final_page_html = `<main>
+        <h1 class="final_page_header">Итог</h1>
+        <div class="results_div">
+          <p class="stat total_points">Набрано очков:</p>
+          <p class="stat right_answers">Правильных ответов:</p>
+          <p class="stat wrong_answers">Неправильных ответов:</p>
+        </div>
+        <p class="thanks">Спасибо за игру!</p>
+        <div class="button_div">
+          <button class="to_the_main_button">На главную</button>
+        </div>
+      </main>`;
+
+// document.querySelector(".app").innerHTML = starting_page_html;
+
+// document.querySelector(".app").innerHTML = question_page_html;
