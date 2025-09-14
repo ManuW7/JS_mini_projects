@@ -165,3 +165,9 @@ h1 {
 .checkbox:checked + .timer_label .custom_slider::before {
   left: 32px;
 }
+
+.theme:hover {
+  transform: translateY(-5px);
+  transition: transform 0.5s ease;
+  box-shadow: 0 8px 20px rgba(140, 17, 250, 0.3);
+}
