@@ -15,6 +15,7 @@
 |  3  | Генератор случайных чисел |      Генерация случайного целого числа между двумя задаными       | [Ссылка](https://manuw7.github.io/JS_mini_projects/projects/random_generator/index.html) |
 |  4  |         TODO List         | Список задач с возможностями добавления, редактирования, удаления |    [Ссылка](https://manuw7.github.io/JS_mini_projects/projects/todo_list/index.html)     |
 |  5  |           Timer           |         Таймер для засекания времени и обратного отсчета          |      [Ссылка](https://manuw7.github.io/JS_mini_projects/projects/timer/index.html)       |
+|  5  |           Quiz            |                               Квиз                                |       [Ссылка](https://manuw7.github.io/JS_mini_projects/projects/quiz/index.html)       |
 |     | _... больше в процессе!_  |                                                                   |                                                                                          |
 
 ---
