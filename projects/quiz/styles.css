@@ -219,7 +219,7 @@ h1 {
   border: 3px solid transparent;
   border-radius: 15px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 1.5em;
+  font-size: 1em;
   background-color: white;
   color: #8c11fa;
   margin: 20px;
@@ -241,7 +241,7 @@ h1 {
 
 .question_text_div {
   padding: 20px;
-  min-height: 150px;
+
   display: flex;
   align-items: center;
 }
@@ -279,4 +279,15 @@ h1 {
 
 .pressed {
   background-color: #8c11fa;
+}
+
+.correct {
+  background-color: #4caf50 !important; /* зелёный */
+  color: white !important;
+  border-color: #4caf50 !important;
+}
+.wrong {
+  background-color: #f44336 !important; /* красный */
+  color: white !important;
+  border-color: #f44336 !important;
 }
