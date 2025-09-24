@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --dark-blue: #00008b;
+}
+
+header {
+  background: linear-gradient(#087efd, #9fdef9, #ffffff);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.headerText {
+  font-family: "Montserrat";
+  font-size: 3.9em;
+  color: var(--dark-blue);
+  margin-top: 225px;
+  font-weight: 500;
+}
+
+.city_finder {
+  font-size: 1.5em;
+  border-radius: 20px;
+  border: none;
+  padding: 10px 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 100;
+  color: var(--dark-blue);
+  min-width: 500px;
+}
+
+.city_finder:focus {
+  outline: 3px solid var(--dark-blue);
+}
+
+.inputWrapper {
+  margin-top: 20px;
+  border-radius: 20px;
+  background-color: white;
+  border: 1px solid var(--dark-blue);
+}
+
+.searchGlassImg {
+  width: 20px;
+  position: absolute;
+  top: 47.75%;
+  left: 64%;
+}
