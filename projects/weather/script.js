@@ -1,13 +1,69 @@
 const cityFinderForm = document.querySelector(".cityFinderForm");
 const cityFinderInput = document.querySelector(".city_finder");
 const API_KEY = "7f537ad51dace14a1817ba015efd9e6a";
+const search_results_section = document.querySelector(".search_results");
+const weather_in_title = document.querySelector(".weather_in");
 
 cityFinderForm.addEventListener("submit", async function (event) {
   event.preventDefault();
 
+  search_results_section.innerHTML = "";
+  weather_in_title.classList.add("hidden");
+
   const coords = await getCityCoords(cityFinderInput.value);
   const result_weather = await getWeatherByCoords(coords);
   console.log(result_weather);
+
+  if (result_weather) {
+    weather_in_title.textContent = "Погода в: " + cityFinderInput.value;
+    weather_in_title.classList.remove("hidden");
+    search_results_section.innerHTML = `
+  <div class="grid_div">
+    <div class="temperature_div">
+      <h3 class="temperature_header">Температура</h3>
+      <p class="actual_temperature">${Math.round(
+        result_weather.main.temp
+      )}°C</p>
+      <div class="side_information_div">
+        <p class="temperature_side_information temp_max">Max: ${Math.round(
+          result_weather.main.temp_max
+        )}°C</p>
+        <p class="temperature_side_information temp_min">Min: ${Math.round(
+          result_weather.main.temp_min
+        )}°C</p>
+        <p class="temperature_side_information temp_feels_like">Feels like: ${Math.round(
+          result_weather.main.feels_like
+        )}°C</p>
+      </div>
+    </div>
+
+    <div class="wind_div">
+      <h3 class="wind_header">Ветер</h3>
+      <p class="wind_speed">${result_weather.wind.speed} м/с</p>
+      <p class="wind_direction">${getWindDirection(result_weather.wind.deg)}</p>
+    </div>
+
+    <div class="clouds_div">
+      <h3 class="clouds_header">Облачность</h3>
+      <div class="clouds_content_div">
+        <div class="clouds_description">
+          <p class="clouds_description_text">${capitalizeFirstLetter(
+            result_weather.weather[0].description
+          )}</p>
+        </div>
+        <img src="https://openweathermap.org/img/wn/${
+          result_weather.weather[0].icon
+        }@2x.png" class="clouds_icon" />
+      </div>
+    </div>
+
+    <div class="humidity_div">
+      <h3 class="humidity_header">Влажность</h3>
+      <p class="humidity_value">${result_weather.main.humidity}%</p>
+    </div>
+  </div>
+`;
+  }
 });
 
 async function getCityCoords(cityName) {
@@ -88,16 +144,18 @@ async function getWeatherByCoords(coords) {
   return JSON.parse(text);
 }
 
-async function main() {
-  try {
-    const result1 = await getCityCoords("Лондон");
-    console.log("Coords:", result1);
-
-    const final_result1 = await getWeatherByCoords(result1);
-    console.log("Weather:", final_result1);
-  } catch (err) {
-    console.error("Ошибка:", err.message);
-  }
+function getWindDirection(deg) {
+  if (deg >= 337.5 || deg < 22.5) return "Север";
+  else if (deg >= 22.5 && deg < 67.5) return "Северо-восточный";
+  else if (deg >= 67.5 && deg < 112.5) return "Восточный";
+  else if (deg >= 112.5 && deg < 157.5) return "Юго-восточный";
+  else if (deg >= 157.5 && deg < 202.5) return "Южный";
+  else if (deg >= 202.5 && deg < 247.5) return "Юго-западный";
+  else if (deg >= 247.5 && deg < 292.5) return "Западный";
+  else return "Северо-западный";
 }
 
-main();
+function capitalizeFirstLetter(str) {
+  if (!str) return ""; // на случай пустой строки
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
